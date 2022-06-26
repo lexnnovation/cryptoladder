@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-      <Link>Crypto Ladder</Link>
+      <Link>
+        <h1>Crypto Ladder</h1>
+      </Link>
     </div>
   );
 };
