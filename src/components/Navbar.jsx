@@ -14,9 +14,6 @@ const NavBar = () => {
         <h1 className='text-xl p-4'>Crypto Ladder</h1>
       </Link>
       <div className='hidden md:block'>
-        <ThemeToggle />
-      </div>
-      <div className='hidden md:block'>
         <Link to='/signin' className='p-4 hover:text-ascent'>
           Sign In
         </Link>
@@ -26,6 +23,9 @@ const NavBar = () => {
         >
           Sign Up
         </Link>
+      </div>
+      <div className='hidden md:block'>
+        <ThemeToggle />
       </div>
       <div
         onClick={handleNav}
