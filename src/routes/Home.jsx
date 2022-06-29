@@ -1,7 +1,12 @@
 import React from "react";
+import SearchCoin from "../components/SearchCoin";
 
-const Home = () => {
-  return <div>Home</div>;
+const Home = ({ coins }) => {
+  return (
+    <div>
+      <SearchCoin coins={coins} />
+    </div>
+  );
 };
 
 export default Home;

@@ -24,7 +24,7 @@ const NavBar = () => {
           Sign Up
         </Link>
       </div>
-      <div className='hidden md:block'>
+      <div className='hidden md:block p-4'>
         <ThemeToggle />
       </div>
       <div
@@ -40,7 +40,7 @@ const NavBar = () => {
         className={
           nav
             ? "md:hidden fixed left-0 top-24 flex flex-col justify-between items-center w-full h-[85%] bg-primary ease-in duration-500 z-10 opacity-100"
-            : "fixed left-[-100%] top-24 flex flex-col justify-between items-center w-full h-[85%] bg-primary ease-in duration-500 z-10 opacity-0"
+            : "fixed left-[-100%] top-24 flex flex-col justify-between items-center w-full h-[85%] bg-primary ease-in duration-300 z-10 opacity-0"
         }
       >
         <ul className='w-full p-6'>
