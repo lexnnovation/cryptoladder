@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import CoinSearchResults from "../components/CoinSearchResults";
-import { FaSearch } from "react-icons/fa";
 
 const SearchCoin = ({ coins }) => {
   const [searchTerm, setsearchTerm] = useState("");
@@ -20,18 +19,18 @@ const SearchCoin = ({ coins }) => {
           />
         </form>
       </div>
-      <div>
-        <table>
-          <thead>
+      <div className='px-4'>
+        <table className='w-full border-collapse text-center'>
+          <thead className='border-b-[2px] bg-primary '>
             <tr>
               <th></th>
               <th>#</th>
-              <th>Coin</th>
+              <th className='text-left'>Coin</th>
               <th></th>
               <th>Price</th>
               <th>24h</th>
-              <th>Volume (24h)</th>
-              <th>Market</th>
+              <th className='hidden md:table-cell'>Volume (24h)</th>
+              <th className='hidden sm:table-cell'>Market</th>
               <th>Last 7 Days</th>
             </tr>
           </thead>
