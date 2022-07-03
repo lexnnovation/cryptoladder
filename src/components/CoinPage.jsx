@@ -18,124 +18,146 @@ const CoinPage = () => {
 
   return (
     <div className='rounded-container my-12 py-8'>
-      <div>
-        <img src={coin.image?.large} alt='/' />
-        <div>
-          <p>{coin?.name} price</p>
-          <p>({coin.symbol?.toUpperCase()} / USD)</p>
-        </div>
-      </div>
-      <div>
-        <div>
+      <div className='mx-4'>
+        <div className='flex py-4'>
+          <img className='w-20 mr-8' src={coin.image?.large} alt='/' />
           <div>
-            {coin.market_data?.current_price ? (
-              <p>${coin.market_data.current_price.usd.toLocaleString()}</p>
-            ) : null}
-            <p>7 Day</p>
-          </div>
-          <div>
-            <Sparklines data={coin.market_data?.sparkline_7d.price}>
-              <SparklinesLine color='red' />
-            </Sparklines>
-          </div>
-          <div>
-            <div>
-              <p>Market Cap</p>
-              {coin.market_data?.market_cap ? (
-                <p>${coin.market_data.market_cap.usd.toLocaleString()}</p>
-              ) : null}
-            </div>
-            <div>
-              <p>Volume (24h)</p>
-              {coin.market_data?.market_cap ? (
-                <p>${coin.market_data.total_volume.usd.toLocaleString()}</p>
-              ) : null}
-            </div>
-          </div>
-          <div>
-            <p>24h High</p>
-            {coin.market_data?.high_24h ? (
-              <p>${coin.market_data.high_24h.usd.toLocaleString()}</p>
-            ) : null}
-          </div>
-          <div>
-            <p>24h Low</p>
-            {coin.market_data?.low_24h ? (
-              <p>${coin.market_data.low_24h.usd.toLocaleString()}</p>
-            ) : null}
+            <p className='font-bold text-2xl'>{coin?.name} price</p>
+            <p>({coin.symbol?.toUpperCase()} / USD)</p>
           </div>
         </div>
-        <div>
-          <p>Market Stats</p>
+        <div className='grid md:grid-cols-2 gap-8'>
           <div>
-            <div>
-              <p>Market Rank</p>
-              {coin.market_cap_rank}
+            <div className='flex justify-between items-center'>
+              {coin.market_data?.current_price ? (
+                <p className='font-bold text-3xl'>
+                  ${coin.market_data.current_price.usd.toLocaleString()}
+                </p>
+              ) : null}
+              <p>7 Day</p>
             </div>
             <div>
-              <p>Hashing Algorithm</p>
-              {coin.hashing_algorithm ? <p>{coin.hashing_algorithm}</p> : null}
+              <Sparklines data={coin.market_data?.sparkline_7d.price}>
+                <SparklinesLine color='red' />
+              </Sparklines>
             </div>
-            <div>
-              <p>Trust Score</p>
-              {coin.tickers ? <p>{coin.liquidity_score.toFixed(2)}</p> : null}
+            <div className='flex justify-between py-4'>
+              <div>
+                <p className='text-gray-500 text-sm'>Market Cap</p>
+                {coin.market_data?.market_cap ? (
+                  <p>${coin.market_data.market_cap.usd.toLocaleString()}</p>
+                ) : null}
+              </div>
+              <div>
+                <p className='text-gray-500 text-sm'>Volume (24h)</p>
+                {coin.market_data?.market_cap ? (
+                  <p>${coin.market_data.total_volume.usd.toLocaleString()}</p>
+                ) : null}
+              </div>
+            </div>
+            <div className='flex justify-between py-4'>
+              <div>
+                <p className='text-gray-500 text-sm'>24h High</p>
+                {coin.market_data?.high_24h ? (
+                  <p>${coin.market_data.high_24h.usd.toLocaleString()}</p>
+                ) : null}
+              </div>
+              <div>
+                <p className='text-gray-500 text-sm'>24h Low</p>
+                {coin.market_data?.low_24h ? (
+                  <p>${coin.market_data.low_24h.usd.toLocaleString()}</p>
+                ) : null}
+              </div>
             </div>
           </div>
           <div>
-            <div>
-              <p>Price Change (24h)</p>
-              {coin.market_data ? (
-                <p>{coin.market_data.price_change_percentage_24h.toFixed(2)}</p>
-              ) : null}
+            <p className='font-bold text-xl'>Market Stats</p>
+            <div className='flex justify-between py-4'>
+              <div>
+                <p className='text-gray-500 text-sm'>Market Rank</p>
+                {coin.market_cap_rank}
+              </div>
+              <div>
+                <p className='text-gray-500 text-sm'>Hashing Algorithm</p>
+                {coin.hashing_algorithm ? (
+                  <p>{coin.hashing_algorithm}</p>
+                ) : null}
+              </div>
+              <div>
+                <p className='text-gray-500 text-sm'>Trust Score</p>
+                {coin.tickers ? <p>{coin.liquidity_score.toFixed(2)}</p> : null}
+              </div>
             </div>
-            <div>
-              <p>Price Change (7d)</p>
-              {coin.market_data ? (
-                <p>{coin.market_data.price_change_percentage_7d.toFixed(2)}</p>
-              ) : null}
+            <div className='flex justify-between py-4'>
+              <div>
+                <p className='text-gray-500 text-sm'>Price Change (24h)</p>
+                {coin.market_data ? (
+                  <p>
+                    {coin.market_data.price_change_percentage_24h.toFixed(2)}
+                  </p>
+                ) : null}
+              </div>
+              <div>
+                <p className='text-gray-500 text-sm'>Price Change (7d)</p>
+                {coin.market_data ? (
+                  <p>
+                    {coin.market_data.price_change_percentage_7d.toFixed(2)}
+                  </p>
+                ) : null}
+              </div>
+              <div>
+                <p className='text-gray-500 text-sm'>Price Change (14d)</p>
+                {coin.market_data ? (
+                  <p>
+                    {coin.market_data.price_change_percentage_14d.toFixed(2)}
+                  </p>
+                ) : null}
+              </div>
             </div>
-            <div>
-              <p>Price Change (14d)</p>
-              {coin.market_data ? (
-                <p>{coin.market_data.price_change_percentage_14d.toFixed(2)}</p>
-              ) : null}
+            <div className='flex justify-between py-4'>
+              <div>
+                <p className='text-gray-500 text-sm'>Price Change (30d)</p>
+                {coin.market_data ? (
+                  <p>
+                    {coin.market_data.price_change_percentage_30d.toFixed(2)}
+                  </p>
+                ) : null}
+              </div>
+              <div>
+                <p className='text-gray-500 text-sm'>Price Change (60d)</p>
+                {coin.market_data ? (
+                  <p>
+                    {coin.market_data.price_change_percentage_60d.toFixed(2)}
+                  </p>
+                ) : null}
+              </div>
+              <div>
+                <p className='text-gray-500 text-sm'>Price Change (1y)</p>
+                {coin.market_data ? (
+                  <p>
+                    {coin.market_data.price_change_percentage_1y.toFixed(2)}
+                  </p>
+                ) : null}
+              </div>
             </div>
-            <div>
-              <p>Price Change (30d)</p>
-              {coin.market_data ? (
-                <p>{coin.market_data.price_change_percentage_30d.toFixed(2)}</p>
-              ) : null}
+            <div className='flex justify-around gap-8 text-2xl text-ascent'>
+              <FaTwitter />
+              <FaFacebook />
+              <FaGithub />
+              <FaReddit />
             </div>
-            <div>
-              <p>Price Change (60d)</p>
-              {coin.market_data ? (
-                <p>{coin.market_data.price_change_percentage_60d.toFixed(2)}</p>
-              ) : null}
-            </div>
-            <div>
-              <p>Price Change (1y)</p>
-              {coin.market_data ? (
-                <p>{coin.market_data.price_change_percentage_1y.toFixed(2)}</p>
-              ) : null}
-            </div>
-          </div>
-          <div>
-            <FaTwitter />
-            <FaFacebook />
-            <FaGithub />
-            <FaReddit />
           </div>
         </div>
-      </div>
-      <div>
-        <p>About {coin.name}</p>
-        <p
-          dangerouslySetInnerHTML={{
-            __html: DOMPurify.sanitize(
-              coin.description ? coin.description.en : null
-            ),
-          }}
-        ></p>
+        <div className='py-4'>
+          <p className='font-bold text-xl py-2'>About {coin.name}</p>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(
+                coin.description ? coin.description.en : null
+              ),
+            }}
+          ></p>
+        </div>
       </div>
     </div>
   );
