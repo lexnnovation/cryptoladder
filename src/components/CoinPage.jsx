@@ -1,14 +1,20 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Sparklines, SparklinesLine } from "react-sparklines";
-import { FaFacebook, FaGithub, FaReddit, FaTwitter } from "react-icons/fa";
+import {
+  FaArrowCircleLeft,
+  FaFacebook,
+  FaGithub,
+  FaReddit,
+  FaTwitter,
+} from "react-icons/fa";
 import DOMPurify from "dompurify";
+import { Link, useParams } from "react-router-dom";
 
 const CoinPage = () => {
   const [coin, setCoin] = useState({});
-
-  const url =
-    "https://api.coingecko.com/api/v3/coins/bitcoin?localization=false&sparkline=true";
+  const params = useParams();
+  const url = `https://api.coingecko.com/api/v3/coins/${params.coinId}?localization=false&sparkline=true`;
 
   useEffect(() => {
     axios.get(url).then((response) => {
@@ -19,12 +25,21 @@ const CoinPage = () => {
   return (
     <div className='rounded-container my-12 py-8'>
       <div className='mx-4'>
-        <div className='flex py-4'>
-          <img className='w-20 mr-8' src={coin.image?.large} alt='/' />
-          <div>
-            <p className='font-bold text-2xl'>{coin?.name} price</p>
-            <p>({coin.symbol?.toUpperCase()} / USD)</p>
+        <div className='flex items-center justify-between '>
+          <div className='flex py-4'>
+            <img className='w-20 mr-8' src={coin.image?.large} alt='/' />
+            <div>
+              <p className='font-bold text-2xl'>{coin?.name} price</p>
+              <p>({coin.symbol?.toUpperCase()} / USD)</p>
+            </div>
           </div>
+          <Link
+            className='flex items-center  text-ascent hover:underline hover:text-secondary ease-in-out duration-1000 font-bold mr-8'
+            to='/'
+          >
+            <FaArrowCircleLeft className='pr-1 text-2xl' />
+            View Ladder
+          </Link>
         </div>
         <div className='grid md:grid-cols-2 gap-8'>
           <div>
@@ -93,7 +108,7 @@ const CoinPage = () => {
                 <p className='text-gray-500 text-sm'>Price Change (24h)</p>
                 {coin.market_data ? (
                   <p>
-                    {coin.market_data.price_change_percentage_24h.toFixed(2)}
+                    {coin.market_data.price_change_percentage_24h.toFixed(2)}%
                   </p>
                 ) : null}
               </div>
@@ -101,7 +116,7 @@ const CoinPage = () => {
                 <p className='text-gray-500 text-sm'>Price Change (7d)</p>
                 {coin.market_data ? (
                   <p>
-                    {coin.market_data.price_change_percentage_7d.toFixed(2)}
+                    {coin.market_data.price_change_percentage_7d.toFixed(2)}%
                   </p>
                 ) : null}
               </div>
@@ -109,7 +124,7 @@ const CoinPage = () => {
                 <p className='text-gray-500 text-sm'>Price Change (14d)</p>
                 {coin.market_data ? (
                   <p>
-                    {coin.market_data.price_change_percentage_14d.toFixed(2)}
+                    {coin.market_data.price_change_percentage_14d.toFixed(2)}%
                   </p>
                 ) : null}
               </div>
@@ -119,7 +134,7 @@ const CoinPage = () => {
                 <p className='text-gray-500 text-sm'>Price Change (30d)</p>
                 {coin.market_data ? (
                   <p>
-                    {coin.market_data.price_change_percentage_30d.toFixed(2)}
+                    {coin.market_data.price_change_percentage_30d.toFixed(2)}%
                   </p>
                 ) : null}
               </div>
@@ -127,7 +142,7 @@ const CoinPage = () => {
                 <p className='text-gray-500 text-sm'>Price Change (60d)</p>
                 {coin.market_data ? (
                   <p>
-                    {coin.market_data.price_change_percentage_60d.toFixed(2)}
+                    {coin.market_data.price_change_percentage_60d.toFixed(2)}%
                   </p>
                 ) : null}
               </div>
@@ -135,16 +150,16 @@ const CoinPage = () => {
                 <p className='text-gray-500 text-sm'>Price Change (1y)</p>
                 {coin.market_data ? (
                   <p>
-                    {coin.market_data.price_change_percentage_1y.toFixed(2)}
+                    {coin.market_data.price_change_percentage_1y.toFixed(2)}%
                   </p>
                 ) : null}
               </div>
             </div>
-            <div className='flex justify-around gap-8 text-2xl text-ascent'>
+            <div className='flex justify-around gap-8 text-3xl text-ascent'>
               <FaTwitter />
               <FaFacebook />
-              <FaGithub />
               <FaReddit />
+              <FaGithub />
             </div>
           </div>
         </div>
