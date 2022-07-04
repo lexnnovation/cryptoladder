@@ -5,42 +5,50 @@ import ThemeToggle from "./ThemeToggle";
 
 const Footer = () => {
   return (
-    <div>
-      <div>
-        <div>
+    <div className='rounded-container my-8 py-4 text-primary'>
+      <div className='grid grid-cols-2 mx-4'>
+        <div className='flex justify-evenly w-full md:max-w-[300px]'>
           <div>
-            <h2>Support</h2>
+            <h2 className='font-bold'>Support</h2>
             <ul>
-              <li>Help Center</li>
-              <li>Contact Us</li>
-              <li>Cryto Ladder</li>
-              <li>Developers</li>
+              <li className='text-sm py-1'>Help Center</li>
+              <li className='text-sm py-1'>Contact Us</li>
+              <li className='text-sm py-1'>Cryto Ladder</li>
+              <li className='text-sm py-1'>Developers</li>
             </ul>
           </div>
           <div>
-            <h2>Info</h2>
+            <h2 className='font-bold'>Info</h2>
             <ul>
-              <li>About Us</li>
-              <li>Careers</li>
-              <li>Buy Coins</li>
-              <li>Terms and Conditions</li>
+              <li className='text-sm py-1'>About Us</li>
+              <li className='text-sm py-1'>Careers</li>
+              <li className='text-sm py-1'>Buy Coins</li>
+              <li className='text-sm py-1'>Terms and Conditions</li>
             </ul>
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              <div>
+        <div className='text-right'>
+          <div className='flex justify-end w-full'>
+            <div className='w-full md:w-[400px] py-4 relative'>
+              <div className='flex justify-center md:justify-end py-4 md:py-0 md:pb-4 mt-[-1rem]'>
                 <ThemeToggle />
               </div>
-              <p>Get periodic crypto news news and updates</p>
-              <div>
+              <p className='text-center md:text-right'>
+                Get periodic crypto news news and updates
+              </p>
+              <div className='py-4'>
                 <form>
-                  <input type='text' placeholder='Please enter your email' />
-                  <button>Subscribe</button>
+                  <input
+                    className='w-full border bg-primary border-input rounded-full mr-2 p-2 text-center md:px-2 md:text-left shadow-lg md:w-auto '
+                    type='email'
+                    placeholder='Please enter your email'
+                  />
+                  <button className='bg-button text-btnText px-4 p-2 w-full rounded-full shadow-lg hover:shadow-xl md:w-auto my-2'>
+                    Subscribe
+                  </button>
                 </form>
               </div>
-              <div>
+              <div className='flex justify-end text-ascent py-2 gap-4 text-2xl'>
                 <FaTwitter />
                 <FaFacebook />
                 <FaReddit />
@@ -50,7 +58,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p className='text-center py-2'>Powered by CoinGecko API</p>
+      <p className='text-center '>Powered by CoinGecko API</p>
     </div>
   );
 };
