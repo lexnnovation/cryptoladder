@@ -44,7 +44,6 @@ const SearchCoin = ({ coins }) => {
                 ) {
                   return value;
                 }
-                return value;
               })
               .map((coin) => (
                 <CoinSearchResults key={coin.id} coin={coin} />
