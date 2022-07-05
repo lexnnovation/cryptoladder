@@ -1,4 +1,3 @@
-import { Input } from "postcss";
 import React from "react";
 import { FaFacebook, FaGithub, FaReddit, FaTwitter } from "react-icons/fa";
 import ThemeToggle from "./ThemeToggle";
@@ -8,12 +7,12 @@ const Footer = () => {
     <div className='rounded-container my-8 py-4 text-primary'>
       <div className='grid grid-cols-2 mx-4'>
         <div className='flex justify-evenly w-full md:max-w-[300px]'>
-          <div>
+          <div className='mr-4'>
             <h2 className='font-bold'>Support</h2>
             <ul>
-              <li className='text-sm py-1'>Help Center</li>
+              <li className='text-sm py-1'>Help Desk</li>
               <li className='text-sm py-1'>Contact Us</li>
-              <li className='text-sm py-1'>Cryto Ladder</li>
+              <li className='text-sm py-1'>Crypto</li>
               <li className='text-sm py-1'>Developers</li>
             </ul>
           </div>
@@ -33,9 +32,7 @@ const Footer = () => {
               <div className='flex justify-center md:justify-end py-4 md:py-0 md:pb-4 mt-[-1rem]'>
                 <ThemeToggle />
               </div>
-              <p className='text-center md:text-right'>
-                Get periodic crypto news news and updates
-              </p>
+              <p className='text-center md:text-right'>Get daily crypto news</p>
               <div className='py-4'>
                 <form>
                   <input
@@ -48,15 +45,15 @@ const Footer = () => {
                   </button>
                 </form>
               </div>
-              <div className='flex justify-end text-ascent py-2 gap-4 text-2xl'>
-                <FaTwitter />
-                <FaFacebook />
-                <FaReddit />
-                <FaGithub />
-              </div>
             </div>
           </div>
         </div>
+      </div>
+      <div className='flex justify-center text-ascent py-2 gap-4 text-2xl'>
+        <FaTwitter />
+        <FaFacebook />
+        <FaReddit />
+        <FaGithub />
       </div>
       <p className='text-center '>Powered by CoinGecko API</p>
     </div>

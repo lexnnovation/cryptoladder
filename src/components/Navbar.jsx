@@ -10,7 +10,7 @@ const NavBar = () => {
   };
   return (
     <div className='rounded-container flex items-center justify-between h-20 font-bold'>
-      <Link to='/'>
+      <Link to='/' onClick={() => (window.location.href = "/")}>
         <h1 className='text-xl p-4'>Crypto Ladder</h1>
       </Link>
       <div className='hidden md:block'>
