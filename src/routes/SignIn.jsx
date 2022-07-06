@@ -11,22 +11,22 @@ const SignIn = () => {
             <label className='pl-4'>Email</label>
             <div className='my-2 shadow-xl rounded-full w-full relative'>
               <input
-                className='focus:outline-none placeholder:pl-2 p-2 w-full border bg-primary border-input rounded-full'
+                className='focus:outline-none placeholder:text-sm pl-4 p-2  w-full border bg-primary border-input rounded-full'
                 type='email'
                 placeholder='Enter email'
               />
-              <MdEmail className='mr-4 absolute right-2 top-3 text-gray-400' />
+              <MdEmail className='mr-4 absolute right-1 top-3 text-gray-400' />
             </div>
           </div>
           <div className='my-4'>
             <label className='pl-4'>Password</label>
             <div className='my-2 shadow-xl rounded-full w-full relative'>
               <input
-                className='focus:outline-none placeholder:pl-2 p-2 w-full border bg-primary border-input rounded-full'
+                className='focus:outline-none pl-4  placeholder:text-sm p-2 w-full border bg-primary border-input rounded-full'
                 type='password'
                 placeholder='Enter password'
               />
-              <MdLock className='mr-4 absolute right-2 top-3 text-gray-400' />
+              <MdLock className='mr-4 absolute right-1 top-3 text-gray-400' />
             </div>
           </div>
           <button

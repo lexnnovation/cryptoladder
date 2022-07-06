@@ -4,7 +4,7 @@ import ThemeToggle from "./ThemeToggle";
 
 const Footer = () => {
   return (
-    <div className='rounded-container my-8 py-4 text-primary'>
+    <div className='rounded-container my-4 py-4 text-primary'>
       <div className='grid grid-cols-2 mx-4'>
         <div className='flex justify-evenly w-full md:max-w-[300px]'>
           <div className='mr-4'>
@@ -28,15 +28,14 @@ const Footer = () => {
         </div>
         <div className='text-right'>
           <div className='flex justify-end w-full'>
-            <div className='w-full md:w-[400px] py-4 relative'>
-              <div className='flex justify-center md:justify-end py-4 md:py-0 md:pb-4 mt-[-1rem]'>
-                <ThemeToggle />
-              </div>
-              <p className='text-center md:text-right'>Get daily crypto news</p>
-              <div className='py-4'>
+            <div className='w-full md:w-[400px] relative'>
+              <p className='text-center md:text-right '>
+                Get daily crypto news and updates
+              </p>
+              <div className='py-2'>
                 <form>
                   <input
-                    className='w-full border bg-primary border-input rounded-full mr-2 p-2 text-center md:px-2 md:text-left shadow-lg md:w-auto '
+                    className='md:pl-4 placeholder:text-sm focus:outline-none w-full border bg-primary border-input rounded-full mr-2 p-2  md:px-2 text-left shadow-lg md:w-auto '
                     type='email'
                     placeholder='Please enter your email'
                   />
@@ -48,6 +47,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className='flex justify-center   md:py-0 md:pb-1 mt-[-1rem]'>
+        <ThemeToggle />
       </div>
       <div className='flex justify-center text-ascent py-2 gap-4 text-2xl'>
         <FaTwitter />

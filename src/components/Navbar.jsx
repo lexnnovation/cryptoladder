@@ -19,7 +19,7 @@ const NavBar = () => {
         </Link>
         <Link
           to='/signup'
-          className='bg-button text-btnText px-6 py-2 ml-3 rounded-xl shadow-lg hover:shadow-xl'
+          className='bg-button text-btnText px-6 py-2 ml-3 rounded-full shadow-lg hover:shadow-xl'
         >
           Sign Up
         </Link>
