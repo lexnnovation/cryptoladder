@@ -29,7 +29,7 @@ function App() {
         <Route path='/' element={<Home coins={coins} />} />
         <Route path='/signin' element={<SignIn />} />
         <Route path='/signup' element={<SignUp />} />
-        <Route path='/' element={<Account />} />
+        <Route path='/account' element={<Account />} />
         <Route path='/coin/:coinId' element={<CoinPage />}>
           <Route path=':coinId' />
         </Route>
