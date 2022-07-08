@@ -11,7 +11,7 @@ const SignIn = () => {
             <label className='pl-4'>Email</label>
             <div className='my-2 shadow-xl rounded-full w-full relative'>
               <input
-                className='focus:outline-none placeholder:text-sm pl-4 p-2  w-full border bg-primary border-input rounded-full'
+                className=' focus:placeholder:text-transparent focus:outline-none placeholder:text-sm pl-4 p-2  w-full border bg-primary border-input rounded-full'
                 type='email'
                 placeholder='Enter email'
               />
@@ -22,7 +22,7 @@ const SignIn = () => {
             <label className='pl-4'>Password</label>
             <div className='my-2 shadow-xl rounded-full w-full relative'>
               <input
-                className='focus:outline-none pl-4  placeholder:text-sm p-2 w-full border bg-primary border-input rounded-full'
+                className=' focus:placeholder:text-transparent focus:outline-none pl-4  placeholder:text-sm p-2 w-full border bg-primary border-input rounded-full'
                 type='password'
                 placeholder='Enter password'
               />
