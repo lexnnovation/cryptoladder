@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const SavedCoin = () => {
@@ -13,7 +14,32 @@ const SavedCoin = () => {
         </p>
       ) : (
         <table>
-          <thead></thead>
+          <thead>
+            <th>Rank #</th>
+            <th>Coin</th>
+            <th>Remove</th>
+          </thead>
+          <tbody>
+            {coins.map((coin) => {
+              <tr key={coin.id}>
+                <td>{coins.rank}</td>
+                <td>
+                  <Link to={`/coin/${coin.id}`}>
+                    <div>
+                      <img src={coin?.image} alt='/' />
+                      <div>
+                        <p>{coin?.name}</p>
+                        <p>{coin?.symbol.toUpperCase()}</p>
+                      </div>
+                    </div>
+                  </Link>
+                </td>
+                <td>
+                  <AiOutlineClose />
+                </td>
+              </tr>;
+            })}
+          </tbody>
         </table>
       )}
     </div>
