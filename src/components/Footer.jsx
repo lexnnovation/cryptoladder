@@ -35,7 +35,7 @@ const Footer = () => {
               <div className='py-2'>
                 <form>
                   <input
-                    className='md:pl-4 placeholder:text-sm focus:outline-none w-full border bg-primary border-input rounded-full mr-2 p-2  md:px-2 text-left shadow-lg md:w-auto '
+                    className='focus:placeholder:text-transparent md:pl-4 placeholder:text-sm focus:outline-none w-full border bg-primary border-input rounded-full mr-2 p-2  md:px-2 text-left shadow-lg md:w-auto '
                     type='email'
                     placeholder='Please enter your email'
                   />

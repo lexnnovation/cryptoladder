@@ -35,7 +35,7 @@ const SavedCoin = () => {
                   </Link>
                 </td>
                 <td>
-                  <AiOutlineClose />
+                  <AiOutlineClose className='cursor-pointer' />
                 </td>
               </tr>;
             })}
