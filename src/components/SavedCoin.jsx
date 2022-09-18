@@ -31,15 +31,21 @@ const SavedCoin = () => {
                 <td>
                   <Link to={`/coin/${coin.id}`}>
                     <div className='flex items-center'>
-                      <img src={coin?.image} alt='/' />
+                      <img
+                        src={coin?.image}
+                        alt='/'
+                        className='w-6 mr-2 rounded-full'
+                      />
                       <div>
-                        <p>{coin?.name}</p>
-                        <p>{coin?.symbol.toUpperCase()}</p>
+                        <p className='hidden sm:table-cell'>{coin?.name} </p>
+                        <p className='text-gray-500 text-left text-sm'>
+                          {coin?.symbol.toUpperCase()}
+                        </p>
                       </div>
                     </div>
                   </Link>
                 </td>
-                <td>
+                <td className='pl-8'>
                   <AiOutlineClose className='cursor-pointer' />
                 </td>
               </tr>;
