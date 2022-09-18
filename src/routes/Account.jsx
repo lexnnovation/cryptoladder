@@ -17,7 +17,7 @@ const Accunt = () => {
       </div>
       <div>
         <div>
-          <h1>Watch List</h1>
+          <h1>Favourite Coins</h1>
           <SavedCoin />
         </div>
       </div>
